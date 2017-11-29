@@ -1,0 +1,45 @@
+int red = 10;
+int yellow = 9;
+int green = 8;
+int other_red = 13;
+int other_yellow = 12;
+int other_green = 11;
+
+void setup() {
+  pinMode(red, OUTPUT);
+  pinMode(yellow, OUTPUT);
+  pinMode(green, OUTPUT);
+  pinMode(other_red, OUTPUT);
+  pinMode(other_yellow, OUTPUT);
+  pinMode(other_green, OUTPUT);
+}
+
+void loop() {
+  changeLights();
+}
+
+void changeLights(){
+  digitalWrite(red, HIGH);
+  digitalWrite(other_green, HIGH);
+  delay(3000);
+  digitalWrite(yellow, HIGH);
+  digitalWrite(other_yellow, HIGH);
+  delay(1000);
+  digitalWrite(red, LOW);
+  digitalWrite(yellow, LOW);
+  digitalWrite(green, HIGH);
+  digitalWrite(other_green, LOW);
+  digitalWrite(other_yellow, LOW);
+  digitalWrite(other_red, HIGH);
+  delay(3000);
+  digitalWrite(yellow, HIGH);
+  digitalWrite(other_yellow, HIGH);
+  delay(1000);
+  digitalWrite(green, LOW);
+  digitalWrite(yellow, LOW);
+  digitalWrite(red, HIGH);
+  digitalWrite(other_red, LOW);
+  digitalWrite(other_yellow, LOW);
+  digitalWrite(other_green, HIGH);
+  delay(3000);
+}
